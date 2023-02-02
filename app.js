@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 var axios = require('axios');
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
 res.json({message: "NASA"});
 });
 
