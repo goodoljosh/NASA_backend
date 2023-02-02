@@ -3,8 +3,8 @@ var app = express();
 var axios = require('axios');
 
 app.get('/', (req, res) => {
-res.send('Hello World!')
-})
+res.json({message: "NASA"});
+});
 
 app.listen(3000,function(){
   console.log('App listening on port 3000');
