@@ -11,3 +11,5 @@ app.listen(PORT,() => {
   console.log(`Server listening on ${PORT}`);
 
 });
+
+//Nasa API Key: mPR4K9KTmxTBtepFRlKkmGHaVyKHvTuo6NFsiKdp 
