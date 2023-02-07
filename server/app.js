@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 var axios = require('axios');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
-app.get("/api", function(req, res)  {
-  axios.get('https://api.nasa.gov/planetary/apod'+ '&apikey=mPR4K9KTmxTBtepFRlKkmGHaVyKHvTuo6NFsiKdp' ).then(function(response){
+app.get("/", function(req, res)  {
+  axios.get('https://api.nasa.gov/planetary/apod?'+ 'api_key=mPR4K9KTmxTBtepFRlKkmGHaVyKHvTuo6NFsiKdp' ).then(function(response){
     res.render('apihtml.ejs', {data : response.data });
   })
 });
