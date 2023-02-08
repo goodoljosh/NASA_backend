@@ -3,11 +3,23 @@
     <title>
         Nasa API Project
     </title>
-    <!--<link rel="stylesheet" href="/static/stylesheets/styles.css" type="text/css" /> -->
+    <link rel="stylesheet" href="/static/stylesheets/styles.css" type="text/css" /> 
     <script></script>
+    <h1>Nasa API Project</h1>
     <h2>
         <%=data.date%>
     </h2>
+    <p> 
+        <%=data.explanation%>
+    </p>
+
+    
+    <img align= "center" src="<%= data.hdurl %>" alt="<%= data.alt %>" class="responsive"  />
+    
+
+    <p>
+        <%=data.url%>
+    </p>
 </head>
 <br>
 <body>
