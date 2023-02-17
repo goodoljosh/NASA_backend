@@ -3,16 +3,13 @@ const app = express();
 var axios = require('axios');
 const PORT = process.env.PORT || 3001;
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Expose-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.header("Access-Control-Allow-Origin", "https://3000-csuwebdev-nasafrontend-hdgdlct877p.ws-us87.gitpod.io/");
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-})
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'https://3000-csuwebdev-nasafrontend-hdgdlct877p.ws-us87.gitpod.io');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
 
 //https://group-project.onrender.com
 
@@ -23,8 +20,9 @@ app.use((req, res, next) => {
 // });
 
 app.get("/", function(req, res)  {
+  console.log('hit')
   axios.get('https://api.nasa.gov/planetary/apod?'+ 'api_key=mPR4K9KTmxTBtepFRlKkmGHaVyKHvTuo6NFsiKdp' ).then(function(response){
-   res.send(JSON.stringify(response.data));
+    res.status(200).json(JSON.stringify(response.data))
   })
 });
 
