@@ -1,7 +1,16 @@
 const express = require("express");
 const app = express();
 var axios = require('axios');
+const cors = require('cors');
 const PORT = process.env.PORT || 3001;
+
+const options = {
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": true,
+  "optionsSuccessStatus": 200
+ }
+  app.use(cors(options))
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', 'https://3000-csuwebdev-nasafrontend-hdgdlct877p.ws-us87.gitpod.io');
