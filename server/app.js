@@ -12,12 +12,6 @@ const options = {
  }
   app.use(cors(options))
 
-app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'https://3000-csuwebdev-nasafrontend-hdgdlct877p.ws-us87.gitpod.io');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
 
 
 //https://group-project.onrender.com
