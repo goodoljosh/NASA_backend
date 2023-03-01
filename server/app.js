@@ -23,7 +23,6 @@ const options = {
 // });
 
 app.get("/", function(req, res)  {
-  console.log('hit')
   axios.get('https://api.nasa.gov/planetary/apod?'+ 'api_key=mPR4K9KTmxTBtepFRlKkmGHaVyKHvTuo6NFsiKdp' ).then(function(response){
     res.status(200).json(JSON.stringify(response.data))
   })
