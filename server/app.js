@@ -21,13 +21,18 @@ const options = {
 //     res.render('apihtml.ejs', {data : response.data });
 //   })
 // });
-
+//Picture of the day API call
 app.get("/", function(req, res)  {
   axios.get('https://api.nasa.gov/planetary/apod?'+ 'api_key=mPR4K9KTmxTBtepFRlKkmGHaVyKHvTuo6NFsiKdp' ).then(function(response){
     res.status(200).json(JSON.stringify(response.data))
   })
 });
-
+//Mars Rover API call
+app.get("/", function(req, res)  {
+  axios.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&'+ 'api_key=mPR4K9KTmxTBtepFRlKkmGHaVyKHvTuo6NFsiKdp' ).then(function(response){
+    res.status(200).json(JSON.stringify(response.data))
+  })
+});
 
 app.listen(PORT,() => {
   console.log(`Server listening on ${PORT}`);
