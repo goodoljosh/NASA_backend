@@ -29,7 +29,8 @@ app.get("/npod", function(req, res)  {
 });
 //Mars Rover API call
 app.get("/mars", function(req, res)  {
-  axios.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&'+ 'api_key=mPR4K9KTmxTBtepFRlKkmGHaVyKHvTuo6NFsiKdp' ).then(function(response){
+  const date = req.query.date
+  axios.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=' + date + '&api_key=mPR4K9KTmxTBtepFRlKkmGHaVyKHvTuo6NFsiKdp' ).then(function(response){
     res.status(200).json((response.data))
   })
 });
