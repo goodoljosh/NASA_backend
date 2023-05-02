@@ -23,7 +23,7 @@ const options = {
 // });
 //Picture of the day API call
 app.get("/npod", function(req, res)  {
-  axios.get('https://api.nasa.gov/planetary/apod?'+ 'api_key=mPR4K9KTmxTBtepFRlKkmGHaVyKHvTuo6NFsiKdp' ).then(function(response){
+  axios.get('https://api.nasa.gov/planetary/apod?'+ 'date=2022-01-25&' + 'api_key=mPR4K9KTmxTBtepFRlKkmGHaVyKHvTuo6NFsiKdp' ).then(function(response){
     res.status(200).json((response.data))
   })
 });
